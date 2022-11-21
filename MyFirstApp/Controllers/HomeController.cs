@@ -20,8 +20,23 @@ namespace MyFirstApp.Controllers
         {
             return View();
         }
+        public ViewResult contactUs()
+        {
+            return View();
+        }
+        public FileResult GetEmployeePayslip(int empid)
+        {
+            string file = "~/PaySlip" + empid+".pdf";
+            return File(file,"application/pdf");
+        }
+        public ActionResult GetPayment()
+        {
+            return Redirect("http://www.facebook.com");
+        }
+
+        }
     }
-}
+
 
 
 

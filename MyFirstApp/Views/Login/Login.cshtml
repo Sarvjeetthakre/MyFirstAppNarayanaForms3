@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        #bt{
+            margin:20px;
+            vertical-align:6px;
+            background-color:green;
+        }
+        #form{
+            margin:35px;
+        }
+        
+
+
+        
+
+        
+       
+    </style>
+
+    <script>
+        function GetMyValidation()
+        {
+            var name = document.getElementById('name').value;
+            document.getElementById("name").style.border = "solid 4px red";
+            alert("Error");
+            var pass = document.getElementById('pass').value;
+            document.getElementById("pass").style.border = "thick solid red";
+            alert("error");
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/home/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home/products">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <br />
+
+
+    <form id="form" action="Login" method="post">
+        <div class="col-md-6">
+            <div>
+                <input type="text" class="form-control" id="name" name="username" value="" placeholder="please enter your name" />
+
+            </div>
+        </div>
+        <br />
+
+
+        <div class="col-md-6">
+            <div>
+                <input type="password" class="form-control" id="pass" name="password" placeholder="please enter your password" />
+
+            </div>
+
+        </div>
+        <br />
+        <input type="submit" id="bt" value="Submit" class="btn btn-sucess" onclick="GetMyValidation()" />
+
+
+    </form>
+
+   <script>
+      
+   </script>
+
+
+</body>
+</html>

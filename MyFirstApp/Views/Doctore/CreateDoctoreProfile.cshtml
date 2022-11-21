@@ -1,0 +1,93 @@
+﻿@model MyFirstApp.Models.DoctoreModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>enquiry form</title>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/umd/popper.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <style>
+        #form {
+            margin: 25px;
+        }
+
+        #bt {
+            background-color: blue;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="/home/index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home/products">Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home/contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+    <br />
+    
+    <div class="container">
+        <h1>Doctor Registration</h1>
+        <form novalidate action="#" id="form" onsubmit="return Validate()">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    @Html.LabelFor(DoctoreName => DoctoreName.Doctor_Name)
+                    <span class="star">*</span>
+                    @Html.TextBoxFor(DoctoreName => DoctoreName.Doctor_Name, new { @class = "form-control", @placeholder = "Enter your full name" })
+                    <small class="form-text text-danger ml-2" id="Fname_error_message"></small>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="qualification">Doctor Qualification<span class="star">*</span></label>
+                    <select class="form-control" id="form_qualification">
+                        <option>---SELECT---</option>
+                        <option>mbbs</option>
+                        <option>bds</option>
+                        <option>bams</option>
+                        <option>bums</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="form-group">
+                    @Html.LabelFor(Email => Email.Email)
+                    <span class="star">*</span>
+                    @Html.TextBoxFor(Email => Email.Email, new { @class = "form-control", @placeholder = "Enter your Email-id" })
+                    <small class="form-text text-danger ml-2" id="Fname_error_message"></small>
+                </div>
+            </div>
+
+             <div class="col-lg-6">
+                <div class="form-group">
+                    @Html.LabelFor(Contact => Contact.Contact)
+                    <span class="star">*</span>
+                    @Html.TextBoxFor(Contact => Contact.Contact, new { @class = "form-control", @placeholder = "Enter your Contact Number" })
+                    <small class="form-text text-danger ml-2" id="Fname_error_message"></small>
+                </div>
+            </div>
+            <button>Register</button>
+
+        </form>
+    </div>
+
+   
+    
+       
+
+
+
+
+</body>
+</html>
